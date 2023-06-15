@@ -44,7 +44,7 @@
       </section>
       <section>
         <h2>How It Works</h2>
-        <p>Here's the code for a simple Tip Calculator app that allows the user to enter a bill amount and a tip percentage, and then calculates the tip amount and the total bill amount:</p>
+        <p>Here's the code for the simple Tip Calculator app that allows the user to enter a bill amount and a tip percentage, and then calculates the tip amount and the total bill amount:</p>
 
 <pre>
   <code>
@@ -66,10 +66,10 @@
             
             // Calculate tip amount based on bill amount and tip percentage
             let tipAmount:Double = (Double(tipPercentTxt.text!)! / 100) * billAmount
-            tipAmountLbl.text = String(format: "$%.02f", tipAmount)
+            tipAmountLbl.text = "\(tipAmount)"
             
-            // Calculate total bill amount and update label
-            billTotalLbl.text = String(format: "$%.02f", billAmount + tipAmount)
+            // Calculate total bill amount
+            billTotalLbl.text = "\(billAmount + tipAmount)"
             
         }
         
@@ -103,10 +103,10 @@
   <li><code>let tipAmount:Double = (Double(tipPercentTxt.text!)! / 100) * billAmount</code>: This line calculates the tip amount based on the bill amount and the tip percentage entered by the user. The tip percentage is divided by 100 to convert it from a percentage to a decimal, and then multiplied by the bill amount to get the tip amount. The result is assigned to a constant called <code>tipAmount</code>.</li>
   
 
-  <li><code>tipAmountLbl.text = String(format: "$%.02f", tipAmount)</code>: This line formats the <code>tipAmount</code> as a currency string with two decimal places using the <code>String(format:)</code> method, and assigns it to the <code>text</code> property of the <code>tipAmountLbl</code> label.</li>
+  <li><code>tipAmountLbl.text = "\(tipAmount)"</code>: This line assigns it to the <code>text</code> property of the <code>tipAmountLbl</code> label.</li>
   
 
-  <li><code>billTotalLbl.text = String(format: "$%.02f", billAmount + tipAmount)</code>: This line calculates the total bill amount by adding the bill amount and the tip amount, formats it as a currency string with two decimal places using the <code>String(format:)</code> method, and assigns it to the <code>text</code> property of the <code>billTotalLbl</code> label.</li>
+  <li><code>billTotalLbl.text = "\(billAmount + tipAmount)"</code>: This line calculates the total bill amount by adding the bill amount and the tip amount, and assigns it to the <code>text</code> property of the <code>billTotalLbl</code> label.</li>
   
 
   <li><code>override func viewDidLoad()</code>: This method is called when the view controller is loaded into memory. In this case, it doesn't do anything, so it's empty.</li>
