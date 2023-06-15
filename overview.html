@@ -44,11 +44,77 @@
       </section>
       <section>
         <h2>How It Works</h2>
-        <p>The visual novel game is created by coding different scenes using Python and Pygame. The scenes are then added together to create a cohesive storyline. The game is controlled by the player's choices, which determine the outcome of the story.</p>
+        <p>Here's the code for a simple Tip Calculator app that allows the user to enter a bill amount and a tip percentage, and then calculates the tip amount and the total bill amount:</p>
+
+<pre>
+  <code>
+    import UIKit
+
+    class ViewController: UIViewController {
+
+        @IBOutlet weak var billAmountTxt: UITextField!
+        @IBOutlet weak var tipPercentTxt: UITextField!
+        @IBOutlet weak var calculateTipBtn: UIButton!
+
+        @IBOutlet weak var tipAmountLbl: UILabel!
+        @IBOutlet weak var billTotalLbl: UILabel!
+
+        @IBAction func calculateTip(_ sender: Any) {
+            
+            // Convert bill amount text to a Double
+            let billAmount:Double = Double(billAmountTxt.text!)!
+            
+            // Calculate tip amount based on bill amount and tip percentage
+            let tipAmount:Double = (Double(tipPercentTxt.text!)! / 100) * billAmount
+            tipAmountLbl.text = String(format: "$%.02f", tipAmount)
+            
+            // Calculate total bill amount and update label
+            billTotalLbl.text = String(format: "$%.02f", billAmount + tipAmount)
+            
+        }
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+        }
+
+    }
+  </code>
+</pre>
+
+<p>Here's an explanation of what each part of the code does:</p>
+
+<ul>
+  <li><code>import UIKit</code>: This line imports the UIKit framework, which contains classes for building iOS applications.</li>
+
+  
+  <li><code>class ViewController: UIViewController</code>: This declares a new class called <code>ViewController</code>, which inherits from <code>UIViewController</code>, one of the built-in view controller classes in UIKit. This means that <code>ViewController</code> is responsible for managing the user interface of the app.</li>
+
+  
+  <li><code>@IBOutlet weak var</code>: These lines declare six different user interface elements as outlets, which means that they can be accessed and modified programmatically. The <code>billAmountTxt</code> and <code>tipPercentTxt</code> are two text fields that allow the user to input the bill amount and the tip percentage, respectively. <code>calculateTipBtn</code> is a button that the user taps to calculate the tip. <code>tipAmountLbl</code> and <code>billTotalLbl</code> are two labels that display the tip amount and the total bill amount, respectively.</li>
+  
+
+  <li><code>@IBAction func calculateTip(_ sender: Any)</code>: This line declares an action method called <code>calculateTip</code>, which is triggered when the user taps the <code>calculateTipBtn</code> button.</li>
+  
+
+  <li><code>let billAmount:Double = Double(billAmountTxt.text!)!</code>: This line converts the bill amount entered by the user from a string to a double, and assigns it to a constant called <code>billAmount</code>.</li>
+  
+
+  <li><code>let tipAmount:Double = (Double(tipPercentTxt.text!)! / 100) * billAmount</code>: This line calculates the tip amount based on the bill amount and the tip percentage entered by the user. The tip percentage is divided by 100 to convert it from a percentage to a decimal, and then multiplied by the bill amount to get the tip amount. The result is assigned to a constant called <code>tipAmount</code>.</li>
+  
+
+  <li><code>tipAmountLbl.text = String(format: "$%.02f", tipAmount)</code>: This line formats the <code>tipAmount</code> as a currency string with two decimal places using the <code>String(format:)</code> method, and assigns it to the <code>text</code> property of the <code>tipAmountLbl</code> label.</li>
+  
+
+  <li><code>billTotalLbl.text = String(format: "$%.02f", billAmount + tipAmount)</code>: This line calculates the total bill amount by adding the bill amount and the tip amount, formats it as a currency string with two decimal places using the <code>String(format:)</code> method, and assigns it to the <code>text</code> property of the <code>billTotalLbl</code> label.</li>
+  
+
+  <li><code>override func viewDidLoad()</code>: This method is called when the view controller is loaded into memory. In this case, it doesn't do anything, so it's empty.</li>
+</ul>
       </section>
       <section>
         <h2>What I Created</h2>
-        <p>I followed a tutorial for a tick tac toe app, but I modified it with sound effects that there is a "Ding" when a player wins and a "Buzz" when a invalid move is made.</p>
+        <p>I learnt the basic language for Swift and created a tip calculator app using the library to create icons and allowed it to take in the total cost and the percent to tip </p>
       </section>
       <section>
         <h2>Connection to Previous Learning</h2>
@@ -60,7 +126,7 @@
         <p>The project utilizes several programming and design concepts and tools, including:</p>
         <ul>
           <li>Swift programming language</li>
-          <li>Integrated Development Environment (IDE), such as PyCharm</li>
+          <li>Integrated Development Environment (IDE), such as XCode</li>
           <li>User Interface (UI) design principles</li>
           <li>Version control tools, such as Git and GitHub</li>
         </ul>
@@ -81,7 +147,7 @@
       </section>
       <section>
         <h2>Career Paths and Reflection</h2>
-        <p>The skills learned through this project can lead to a variety of career paths, including game development, software engineering, and web development. While we may not pursue a career specifically in app development, the project allowed us to develop valuable skills in programming, design, and collaboration that can be applied to a variety of fields.</p>
+        <p>The skills learned through this project can lead to a variety of career paths, including game development, software engineering, and web development. While I may not pursue a career specifically in app development, the project allowed me to develop valuable skills in programming and design that can be applied to a variety of fields.</p>
       </section>
     </main>
     <footer>
